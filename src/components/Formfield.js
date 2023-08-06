@@ -1,15 +1,17 @@
 import React,{useState} from 'react'
 
-export default function Formfield() {
+export default function Formfield(props) {
     const onClicked=()=>{
         let newText=text.toUpperCase();
         setText(newText);
     }
     const HandleOnChange=(event)=>{
          setText(event.target.value);
+         
     }
     const onClearClicked=(event)=>{
         setText("");
+        props.showAlert("Cleared","success");
    }
   
    const onCapitalizeClicked=(event)=>{
